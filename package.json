@@ -1,0 +1,22 @@
+{
+  "name": "nodebasic",
+  "version": "1.0.0",
+  "description": "A Node js App",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "api"
+  ],
+  "author": "Stanloky",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.6",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.2"
+  }
+}
