@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose")
+const bodyparser = require("body-parser")
 const morgan = require("morgan");
 // const dotenv = require("dotenv");
 require('dotenv').config({path:'.env'});
 
-console.log(process.env.MONGO_URI)
+// console.log(process.env.MONGO_URI)
 
 //db
 mongoose.connect(process.env.MONGO_URI,
@@ -23,6 +24,7 @@ const postRoutes = require("./routes/post");
 
 //middleware
 app.use(morgan ("dev"));
+app.use(bodyparser.json());
 
 app.use("/", postRoutes);
 
