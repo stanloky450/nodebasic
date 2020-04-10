@@ -1,15 +1,17 @@
 
 
 const express = require("express");
-const postController = require("../controllers/post");
-const validator = require("../validator");
+const {getPosts, createPost} = require("../controllers/post");
+const validator = require("../validators/post");
 
 const router = express.Router();
 
-router.get("/", postController.getPosts);
-router.post("/post", validator.createPostValidator, postController.createPost);
+router.get("/", getPosts);
+router.post("/post", validator.createPostValidator, createPost);
 
 module.exports = router;
+
+// mongodb+srv://stan:123greatman@cluster0-ehpux.mongodb.net/test?retryWrites=true&w=majority
 
 
 

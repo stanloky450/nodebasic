@@ -1,32 +1,3 @@
-// const mongoose = require("mongoose")
-// const { ObjectId } = mongoose.Schema
-
-// const postSchema = new mongoose.Schema({
-
-    
-//     title: {
-    
-//     Type: String,
-//     required: true,
-//     minlength: 4,
-//     maxlength:165
-
-//     },
-
-//     body:{
-//         Type: String,
-//         required: "body is required",
-//         minlength: 4,
-//         maxlength: 2000
-
-//     }
-
-// });
-
-
-// module.exports = mongoose.model("Post",postSchema);
-
-
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema;
 
@@ -37,29 +8,29 @@ const postSchema = new mongoose.Schema({
     },
     body: {
         type: String,
-        required: true
-    },
-    photo: {
-        data: Buffer,
-        contenType: String
-    },
-    postedBy: {
-        type: ObjectId,
-        ref: 'User'
-    },
-    created: {
-        type: Date,
-        default: Date.now
-    },
-    updated: Date,
-    likes: [{ type: ObjectId, ref: 'User' }],
-    comments: [
-        {
-            text: String,
-            created: { type: Date, default: Date.now },
-            postedBy: { type: ObjectId, ref: 'User' }
-        }
-    ]
+        required: true}
+    // },
+    // photo: {
+    //     data: Buffer,
+    //     contenType: String
+    // },
+    // postedBy: {
+    //     type: ObjectId,
+    //     ref: 'User'
+    // },
+    // created: {
+    //     type: Date,
+    //     default: Date.now
+    // },
+    // updated: Date,
+    // likes: [{ type: ObjectId, ref: 'User' }],
+    // comments: [
+    //     {
+    //         text: String,
+    //         created: { type: Date, default: Date.now },
+    //         postedBy: { type: ObjectId, ref: 'User' }
+    //     }
+    // ]
 });
 
 module.exports = mongoose.model('Post', postSchema);
